@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Bot, MessageCircle, Target, BookOpen, Brain, Zap, Search, Sparkles, CheckCircle } from "lucide-react";
+import { MessageCircle, Target, BookOpen, Brain, Zap, Search, CheckCircle, FileText, Calendar, PenTool, Clock } from "lucide-react";
+import Image from "next/image";
 
 export default function App() {
   const examOptions = [
@@ -16,8 +17,7 @@ export default function App() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Bot className="h-6 w-6 text-primary" />
-              <h1 className="text-xl">Crack Mantra</h1>
+              <h1 className="text-xl font-semibold">Crack Mantra</h1>
             </div>
             <Button asChild>
               <a href="https://t.me/+P0coDi0wDFthMTI9" target="_blank" rel="noopener noreferrer">
@@ -30,31 +30,50 @@ export default function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/10">
+      <section className="py-20 gradient-bg-secondary">
         <div className="container mx-auto px-4 text-center">
-          <Badge className="mb-6" variant="secondary">
-            <Sparkles className="mr-2 h-4 w-4" />
-            Coming Soon - AI Study Planner
+          <Badge className="mb-6" variant="outline">
+            <CheckCircle className="mr-2 h-4 w-4" />
+            CrackMantra - AI Study Companion
           </Badge>
-          <h1 className="text-5xl md:text-6xl mb-8 text-foreground">
+          <h1 className="text-5xl md:text-6xl mb-8 text-foreground font-bold">
             Your AI Study Companion for 
             <span className="text-primary block">Government Exams</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto">
-            Get a personalized study plan and curated free lectures tailored to your exam, 
-            timeline, and learning style. Stop wasting time searching for resources.
+            Get personalized study plans, daily quizzes, current affairs notes, and custom short notes - 
+            all the tools you need to crack your government exam.
           </p>
           <div className="flex justify-center mb-12">
-            <Button size="lg" className="px-8 text-lg h-14" asChild>
+            <Button size="lg" className="px-8 text-lg h-14 button-enhanced" asChild>
               <a href="https://t.me/+P0coDi0wDFthMTI9" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="mr-2 h-6 w-6" />
-                Join Telegram Community
+                Get Started Now
               </a>
             </Button>
           </div>
-          <div className="w-full max-w-4xl mx-auto bg-card/50 backdrop-blur-sm border rounded-2xl p-8">
-            <div className="w-full h-64 bg-gradient-to-br from-primary/10 to-secondary/20 rounded-xl flex items-center justify-center">
-              <Bot className="h-24 w-24 text-primary/50" />
+          
+          {/* MVP Features Preview */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="enhanced-card rounded-xl p-6 hover:shadow-lg transition-all duration-300 border">
+              <Calendar className="h-12 w-12 text-primary mx-auto mb-4 icon-glow" />
+              <h3 className="text-lg font-semibold mb-2">Study Plan Generator</h3>
+              <p className="text-sm text-muted-foreground">Personalized study schedules</p>
+            </div>
+            <div className="enhanced-card rounded-xl p-6 hover:shadow-lg transition-all duration-300 border">
+              <MessageCircle className="h-12 w-12 text-primary mx-auto mb-4 icon-glow" />
+              <h3 className="text-lg font-semibold mb-2">Daily Quizzes</h3>
+              <p className="text-sm text-muted-foreground">Free quizzes on Telegram</p>
+            </div>
+            <div className="enhanced-card rounded-xl p-6 hover:shadow-lg transition-all duration-300 border">
+              <FileText className="h-12 w-12 text-primary mx-auto mb-4 icon-glow" />
+              <h3 className="text-lg font-semibold mb-2">Current Affairs</h3>
+              <p className="text-sm text-muted-foreground">Latest exam-focused notes</p>
+            </div>
+            <div className="enhanced-card rounded-xl p-6 hover:shadow-lg transition-all duration-300 border">
+              <PenTool className="h-12 w-12 text-primary mx-auto mb-4 icon-glow" />
+              <h3 className="text-lg font-semibold mb-2">Short Notes Maker</h3>
+              <p className="text-sm text-muted-foreground">Create custom study notes</p>
             </div>
           </div>
         </div>
@@ -76,7 +95,7 @@ export default function App() {
               </Badge>
             ))}
           </div>
-          <Button size="lg" className="px-8" asChild>
+          <Button size="lg" className="px-8 button-enhanced" asChild>
             <a href="https://t.me/+P0coDi0wDFthMTI9" target="_blank" rel="noopener noreferrer">
               <MessageCircle className="mr-2 h-5 w-5" />
               Join Our Community
@@ -85,20 +104,20 @@ export default function App() {
         </div>
       </section>
 
-      {/* AI Study Planning Feature */}
+      {/* Study Plan Generator Feature */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <Badge className="mb-4" variant="outline">
-                <Brain className="mr-2 h-4 w-4" />
-                AI Planning
+                <Calendar className="mr-2 h-4 w-4" />
+                Available Now
               </Badge>
               <h2 className="text-4xl md:text-5xl mb-6">
-                Personalized Study Plans in Seconds
+                Study Plan Generator
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                Our AI analyzes your exam, timeline, and learning preferences to create a custom study schedule that adapts to your pace.
+                Get a structured, personalized study plan tailored to your exam and timeline. No more confusion about what to study when.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
@@ -107,67 +126,87 @@ export default function App() {
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Focus areas identified from your weak points</span>
+                  <span>Subject-wise breakdown and scheduling</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Daily study goals that fit your schedule</span>
+                  <span>Daily and weekly study goals</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>Revision schedules and mock test timing</span>
                 </div>
               </div>
-              <Button size="lg" className="px-8" asChild>
+              <Button size="lg" className="px-8 button-enhanced" asChild>
                 <a href="https://t.me/+P0coDi0wDFthMTI9" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  Join Community
+                  Get Your Study Plan
                 </a>
               </Button>
             </div>
             <div className="bg-gradient-to-br from-primary/5 to-secondary/10 rounded-2xl p-8">
-              <div className="w-full h-80 bg-card rounded-xl flex items-center justify-center border">
-                <Brain className="h-32 w-32 text-primary/30" />
+              <div className="w-full h-80 bg-card rounded-xl flex items-center justify-center border overflow-hidden">
+                <Image 
+                  src="/study-plan.png" 
+                  alt="Study Plan Generator Interface" 
+                  width={400} 
+                  height={300}
+                  className="rounded-lg object-cover w-full h-full"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Free Lecture Aggregation Feature */}
-      <section className="py-20 bg-muted/30">
+      {/* Free Daily Quizzes Feature */}
+      <section className="py-20 gradient-bg-secondary">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="bg-gradient-to-br from-secondary/10 to-primary/5 rounded-2xl p-8 order-2 lg:order-1">
-              <div className="w-full h-80 bg-card rounded-xl flex items-center justify-center border">
-                <Search className="h-32 w-32 text-primary/30" />
+              <div className="w-full h-80 bg-card rounded-xl flex items-center justify-center border overflow-hidden">
+                <Image 
+                  src="/daily-quiz.png" 
+                  alt="Daily Quiz Interface on Telegram" 
+                  width={400} 
+                  height={300}
+                  className="rounded-lg object-cover w-full h-full"
+                />
               </div>
             </div>
             <div className="order-1 lg:order-2">
               <Badge className="mb-4" variant="outline">
-                <Search className="mr-2 h-4 w-4" />
-                Content Discovery
+                <MessageCircle className="mr-2 h-4 w-4" />
+                Available Now
               </Badge>
               <h2 className="text-4xl md:text-5xl mb-6">
-                Best Free Lectures, Curated by AI
+                Free Daily Quizzes on Telegram
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                Stop scrolling through endless YouTube videos. Our AI finds and organizes the highest-quality free lectures for your specific topics.
+                Test your knowledge daily with our carefully curated quizzes. Delivered directly to your Telegram, covering all major government exam topics.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Quality-verified content from top educators</span>
+                  <span>Daily fresh questions covering all subjects</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Organized by topics and difficulty level</span>
+                  <span>Instant answers with detailed explanations</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Updated with latest exam patterns</span>
+                  <span>Track your performance and weak areas</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>Exam-pattern based question format</span>
                 </div>
               </div>
-              <Button size="lg" className="px-8" asChild>
+              <Button size="lg" className="px-8 button-enhanced" asChild>
                 <a href="https://t.me/+P0coDi0wDFthMTI9" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  Join Community
+                  Start Daily Quizzes
                 </a>
               </Button>
             </div>
@@ -175,86 +214,190 @@ export default function App() {
         </div>
       </section>
 
-      {/* Smart Progress Tracking Feature */}
+      {/* Latest Current Affairs Notes Feature */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <Badge className="mb-4" variant="outline">
-                <Zap className="mr-2 h-4 w-4" />
-                Adaptive Learning
+                <FileText className="mr-2 h-4 w-4" />
+                Available Now
               </Badge>
               <h2 className="text-4xl md:text-5xl mb-6">
-                AI That Learns From Your Progress
+                Latest Current Affairs Notes
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                As you study, our AI tracks your progress and automatically adjusts your plan. Struggling with a topic? Get more resources. Mastered something? Move ahead faster.
+                Stay updated with the latest current affairs through our comprehensive, exam-focused notes. Updated regularly to keep you ahead of the competition.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Real-time plan adjustments based on performance</span>
+                  <span>Daily current affairs updates</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Smart recommendations for weak areas</span>
+                  <span>Exam-specific formatting and focus</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-primary" />
-                  <span>Optimized study sequence for better retention</span>
+                  <span>Important facts and figures highlighted</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>Monthly compilation for easy revision</span>
                 </div>
               </div>
-              <Button size="lg" className="px-8" asChild>
+              <Button size="lg" className="px-8 button-enhanced" asChild>
                 <a href="https://t.me/+P0coDi0wDFthMTI9" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  Join Community
+                  Get Current Affairs
                 </a>
               </Button>
             </div>
             <div className="bg-gradient-to-br from-primary/5 to-secondary/10 rounded-2xl p-8">
-              <div className="w-full h-80 bg-card rounded-xl flex items-center justify-center border">
-                <Zap className="h-32 w-32 text-primary/30" />
+              <div className="w-full h-80 bg-card rounded-xl flex items-center justify-center border overflow-hidden">
+                <Image 
+                  src="/current-affairs.png" 
+                  alt="Current Affairs Notes Interface" 
+                  width={400} 
+                  height={300}
+                  className="rounded-lg object-cover w-full h-full"
+                />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Short Notes Maker Feature */}
+      <section className="py-20 gradient-bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="bg-gradient-to-br from-secondary/10 to-primary/5 rounded-2xl p-8 order-2 lg:order-1">
+              <div className="w-full h-80 bg-card rounded-xl flex items-center justify-center border overflow-hidden">
+                <Image 
+                  src="/short-notes.png" 
+                  alt="Short Notes Maker Interface" 
+                  width={400} 
+                  height={300}
+                  className="rounded-lg object-cover w-full h-full"
+                />
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <Badge className="mb-4" variant="outline">
+                <PenTool className="mr-2 h-4 w-4" />
+                Available Now
+              </Badge>
+              <h2 className="text-4xl md:text-5xl mb-6">
+                Short Notes Maker
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Create personalized, concise notes from any topic or chapter. Perfect for quick revision and last-minute preparation.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>AI-powered note summarization</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>Customizable length and focus areas</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>Key points and formulas highlighted</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary" />
+                  <span>Export in PDF format for easy sharing</span>
+                </div>
+              </div>
+              <Button size="lg" className="px-8 button-enhanced" asChild>
+                <a href="https://t.me/+P0coDi0wDFthMTI9" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Create Notes
+                </a>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl mb-6">
             Get Started in 3 Simple Steps
           </h2>
           <p className="text-xl text-muted-foreground mb-16 max-w-2xl mx-auto">
-            From exam selection to personalized study plan - all powered by AI
+            Access all our study tools through our Telegram community
           </p>
           <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            <div className="text-center">
+              <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
+                <MessageCircle className="h-10 w-10 text-primary" />
+              </div>
+              <h3 className="text-2xl mb-4">Join Telegram</h3>
+              <p className="text-muted-foreground mb-6">
+                Join our active community and get instant access to all study tools
+              </p>
+            </div>
             <div className="text-center">
               <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
                 <Target className="h-10 w-10 text-primary" />
               </div>
               <h3 className="text-2xl mb-4">Choose Your Exam</h3>
               <p className="text-muted-foreground mb-6">
-                Select from 15+ government exams including SSC, Banking, UPSC, and State PSC
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
-                <Brain className="h-10 w-10 text-primary" />
-              </div>
-              <h3 className="text-2xl mb-4">Describe Your Goals</h3>
-              <p className="text-muted-foreground mb-6">
-                Tell our AI about your timeline, weak areas, and learning preferences
+                Select from 15+ government exams and get personalized resources
               </p>
             </div>
             <div className="text-center">
               <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
                 <BookOpen className="h-10 w-10 text-primary" />
               </div>
-              <h3 className="text-2xl mb-4">Get Your Plan</h3>
+              <h3 className="text-2xl mb-4">Start Studying</h3>
               <p className="text-muted-foreground mb-6">
-                Receive a personalized study schedule with curated free lectures
+                Use study plans, daily quizzes, current affairs, and notes to excel
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Coming Soon Section */}
+      <section className="py-20 gradient-bg-accent">
+        <div className="container mx-auto px-4 text-center">
+          <Badge className="mb-6" variant="outline">
+            <Clock className="mr-2 h-4 w-4" />
+            Coming Soon
+          </Badge>
+          <h2 className="text-4xl md:text-5xl mb-6">
+            Advanced AI Features
+          </h2>
+          <p className="text-xl text-muted-foreground mb-16 max-w-3xl mx-auto">
+            We&apos;re building powerful AI features to take your preparation to the next level
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="coming-soon-card rounded-xl p-8">
+              <Brain className="h-16 w-16 text-primary/50 mx-auto mb-6 icon-glow" />
+              <h3 className="text-2xl mb-4">AI Study Planning</h3>
+              <p className="text-muted-foreground">
+                Advanced AI that learns from your progress and adapts your study plan in real-time
+              </p>
+            </div>
+            <div className="coming-soon-card rounded-xl p-8">
+              <Search className="h-16 w-16 text-primary/50 mx-auto mb-6 icon-glow" />
+              <h3 className="text-2xl mb-4">Lecture Curation</h3>
+              <p className="text-muted-foreground">
+                AI-powered discovery of the best free lectures tailored to your specific topics
+              </p>
+            </div>
+            <div className="coming-soon-card rounded-xl p-8">
+              <Zap className="h-16 w-16 text-primary/50 mx-auto mb-6 icon-glow" />
+              <h3 className="text-2xl mb-4">Smart Progress Tracking</h3>
+              <p className="text-muted-foreground">
+                Intelligent tracking system that identifies weak areas and optimizes study sequence
               </p>
             </div>
           </div>
@@ -287,11 +430,10 @@ export default function App() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Bot className="h-6 w-6 text-primary" />
-                <h3>Crack Mantra</h3>
+                <h3 className="text-xl font-semibold">Crack Mantra</h3>
               </div>
               <p className="text-muted-foreground mb-6">
-                AI-powered study planning and free lecture aggregation for government exam aspirants.
+                Complete study solution with personalized plans, daily quizzes, current affairs, and notes for government exam aspirants.
               </p>
               <Button className="w-full" asChild>
                 <a href="https://t.me/+P0coDi0wDFthMTI9" target="_blank" rel="noopener noreferrer">
@@ -301,12 +443,12 @@ export default function App() {
               </Button>
             </div>
             <div>
-              <h4 className="mb-4">AI Features</h4>
+              <h4 className="mb-4">Available Features</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground">Study Planning</a></li>
-                <li><a href="#" className="hover:text-foreground">Lecture Curation</a></li>
-                <li><a href="#" className="hover:text-foreground">Progress Tracking</a></li>
-                <li><a href="#" className="hover:text-foreground">Smart Recommendations</a></li>
+                <li><a href="#" className="hover:text-foreground">Study Plan Generator</a></li>
+                <li><a href="#" className="hover:text-foreground">Daily Quizzes</a></li>
+                <li><a href="#" className="hover:text-foreground">Current Affairs Notes</a></li>
+                <li><a href="#" className="hover:text-foreground">Short Notes Maker</a></li>
               </ul>
             </div>
             <div>
